@@ -125,7 +125,7 @@ class DockerExecutor:
         if self.image_exists_locally():
             self.run.info('🐳 Docker image', f'{self.image} (cached locally)')
         else:
-            self.run.info('⛔️ Docker image not found locally — pulling', self.image)
+            self.run.info('📦 Docker image not found locally — pulling', self.image)
             self.pull()
 
 
