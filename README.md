@@ -2,9 +2,23 @@
 
 Micro Python tools with two external calls: SeqKit and FastTree.
 
+## Installation
+
+Can be installed from source of releases from *test* PyPI:
+
+```bash
+pip install \
+  --index-url https://test.pypi.org/simple/ \
+  --extra-index-url https://pypi.org/simple/ \
+  anvio-ext-tools
+```
 ```bash
 anvio-tools-demo --help
 ```
+
+## Running
+
+The demo programme is **anvio-tools-demo**
 
 ```
 usage: anvio-tools-demo [-h] -i ALIGNMENT_FILE -o TREEFILE [--fasttree-program PROGRAM] [--exec EXECUTOR] [--debug] [--quiet]
