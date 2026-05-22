@@ -1,4 +1,4 @@
-<img src="anvio-containers.png" align="right" width="120">
+<img src="anvio-containers.png" align="right" width="220">
 
 # anvio-ext-tools
 
