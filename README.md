@@ -38,7 +38,10 @@ options:
   --quiet               Suppress terminal output (default: False)
 ```
 
-[x] Implemented executor `Docker`
-[ ] Implemented executor `Singularity`
-[ ] Implemented executor `Conda`
-[x] Implemented executor `Path` (default, traditional)
+
+Status:
+
+- [x] Implemented executor `Docker` (draft)
+- [ ] Implemented executor `Singularity`
+- [ ] Implemented executor `Conda`
+- [x] Implemented executor `Path` (default, traditional)
