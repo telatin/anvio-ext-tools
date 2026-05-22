@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "anvio-tools"
+version = "0.0.1"
+description = "Minimal Anvio-style external tool wrappers demo"
+requires-python = ">=3.11"
+
+[project.scripts]
+anvio-tools-demo = "anvio_tools.cli.anvio_tools_demo:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["anvio_tools*"]
