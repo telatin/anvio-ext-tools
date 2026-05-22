@@ -1,3 +1,5 @@
+<img src="anvio-containers.png" align="right" width="120">
+
 # anvio-ext-tools
 
 Micro Python tools with two external calls: SeqKit and FastTree.
