@@ -44,6 +44,12 @@ def main(args=None):
                         default='fasttree',
                         metavar='PROGRAM',
                         help='FastTree executable name (e.g. FastTree or FastTreeMP)')
+    parser.add_argument('--exec',
+                        default='path',
+                        choices=['path', 'conda', 'docker', 'singularity'],
+                        metavar='EXECUTOR',
+                        dest='executor',
+                        help='Execution backend: path | conda | docker | singularity (default: path)')
     parser.add_argument('--debug',
                         action='store_true',
                         help='Print debug information')
@@ -53,8 +59,11 @@ def main(args=None):
 
     args = parser.parse_args(args)
 
-    # Honour --debug and --quiet at runtime in case they were not in sys.argv at
-    # import time (e.g. when calling main() programmatically).
+    # Honour --exec / --debug / --quiet at runtime in case they were not in
+    # sys.argv at import time (e.g. when calling main() programmatically).
+    if args.executor not in anvio_tools._EXEC_CHOICES:
+        raise ConfigError(f"Unknown executor '{args.executor}'. Choose from: {', '.join(anvio_tools._EXEC_CHOICES)}")
+    anvio_tools.EXEC = args.executor
     if args.debug:
         anvio_tools.DEBUG = True
     if args.quiet:
@@ -71,6 +80,7 @@ def main(args=None):
         run.info('Input alignment', args.alignment_file)
         run.info('Output tree',    args.tree_file)
         run.info('FastTree binary', args.fasttree_program)
+        run.info('Executor',       args.executor)
 
         # ------------------------------------------------------------------ #
         #  STEP 1 — SeqKit stats

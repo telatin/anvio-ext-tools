@@ -76,9 +76,9 @@ class Run:
         for _ in range(nl_before):
             self._write('\n')
         if header:
-            bar = '=' * 60
-            self._write(f"  {color}{bar}{_RESET}\n")
-            self._write(f"  {color}{_BOLD}** {header}{_RESET}\n")
+            bar = '-' * 60
+            #self._write(f"  {color}{bar}{_RESET}\n")
+            self._write(f"  {color}{_BOLD}➡ {header}{_RESET}\n")
             self._write(f"  {color}{bar}{_RESET}\n")
         if msg:
             self._write(f"  {msg}\n")
