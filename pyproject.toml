@@ -3,8 +3,8 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "anvio-tools"
-version = "0.0.1"
+name = "anvio-ext-tools"
+version = "0.1.0"
 description = "Minimal Anvio-style external tool wrappers demo"
 authors = [
     {name = "Andrea Telatin", email = "andreatelatin@gmail.com"}
